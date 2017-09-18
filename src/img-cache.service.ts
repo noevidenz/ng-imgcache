@@ -45,6 +45,32 @@ export class ImgCacheService {
     });
   }
 
+  updateCachedFile(url: string): Promise<string> {
+    return Promise.resolve()
+      .then(() => this.checkInitialised())
+      .then(() => this.clearFromCache(url))
+      .then(() => this.cacheIfNecessary(url))
+      .then(() => this.replaceWithCached(url))
+      .catch(err => {
+          console.warn(err);
+          return url;
+      });
+  }
+
+  clearFromCache(url: string): Promise<null> {
+    return new Promise((resolve, reject) => {
+      ImgCache.isCached(url, (path, success) => {
+        if (success) {
+          // cached, remove file
+          ImgCache.removeFile(url, resolve, reject);
+        } else {
+          // not cached, move on
+          resolve();
+        }
+      });
+    });
+  }
+
   private checkInitialised() {
     if(!this.promise) {
       throw new Error('ImgCache has not been initialised. Please call `init` before using the library.');
