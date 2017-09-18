@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fiznool/ng-imgcache.git"
+    "url": "git+https://github.com/noevidenz/ng-imgcache.git"
   },
   "keywords": [
     "angular",
@@ -21,14 +21,20 @@
     "ionic"
   ],
   "author": "Tom Spencer <fiznool@gmail.com>",
+  "contributors": [
+    {
+      "name": "Kyle Murphy",
+      "email": "noevidenz@gmail.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fiznool/ng-imgcache/issues"
+    "url": "https://github.com/noevidenz/ng-imgcache/issues"
   },
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/fiznool/ng-imgcache#readme",
+  "homepage": "https://github.com/noevidenz/ng-imgcache#readme",
   "devDependencies": {
     "@angular/common": "^4.1.2",
     "@angular/compiler": "^4.1.2",
